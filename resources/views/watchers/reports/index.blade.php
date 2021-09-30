@@ -120,7 +120,7 @@
                                                class="btn btn-sm btn-outline-success"><span
                                                     class="fa fa-download"></span></a>
                                         @else
-                                            <a href="{{ route('dispatchers.report') }}"
+                                            <a href="{{ route('watchers.report') }}"
                                                class="btn btn-sm btn-outline-danger">
                                                 Refresh
                                             </a>
