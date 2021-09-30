@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Vehicle;
 use Ichtrojan\Otp\Otp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 
 class RegisterController extends Controller
@@ -124,6 +125,8 @@ class RegisterController extends Controller
             //Send sms
             //$message = "Dear user, your One Time Password(OTP) is $token. Enter this to login";
             $sendsms = sendSms($vehicleNew->phone, $token);
+
+            Log::info($token);
 
             if ($sendsms) {
                 $success['status'] = $this->successStatus;
