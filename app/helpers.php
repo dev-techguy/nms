@@ -6,6 +6,8 @@
  * and open the template in the editor.
  */
 
+use Illuminate\Support\Facades\Log;
+
 function sendSms($phone, $message)
 {
     //Format phone
@@ -71,6 +73,8 @@ function sendSms($phone, $message)
     $response = curl_exec($curl);
 
     curl_close($curl);
+
+    Log::info($message);
 
     $decoded_response = json_decode($response);
     //dd($decoded_response);
