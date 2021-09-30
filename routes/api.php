@@ -14,7 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace' => 'Api'], function () {
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+Route::group(['namespace' => 'Api'], function ()
+{
     /*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
         return $request->user();
     });*/
@@ -50,12 +67,13 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::get('/case/{id}', 'TaskController@singleCase');
 
-        Route::get('logs', [ProfileController::class, 'logs']);
+        Route::get('/logs', 'ProfileController@logs');
 
         Route::post('/logout', 'LoginController@logout');
     });
 
 });
+
 
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
