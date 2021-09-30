@@ -34,7 +34,7 @@ class ReportController extends Controller
                 'user_id' => $user->id,
                 'from_date' => $request->from_date,
                 'to_date' => $request->to_date,
-                'path_name' => 'shops-report-' . date('Y-m-d', strtotime($request->from_date)) . '-to-' . date('Y-m-d', strtotime($request->to_date)) . '-' . Str::slug(Str::lower(Str::random(6))) . '.xlsx',
+                'path_name' => 'nms-report-' . date('Y-m-d', strtotime($request->from_date)) . '-to-' . date('Y-m-d', strtotime($request->to_date)) . '-' . Str::slug(Str::lower(Str::random(6))) . '.xlsx',
             ]);
         } else {
             $user->report->update([

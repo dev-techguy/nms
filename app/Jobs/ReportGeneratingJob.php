@@ -59,7 +59,7 @@ class ReportGeneratingJob implements ShouldQueue
         }
 
         // set new name of the file
-        $fileName = 'transactions-report-' . date('Y-m-d', strtotime($this->from_date)) . '-to-' . date('Y-m-d', strtotime($this->to_date)) . '-' . Str::slug(Str::lower(Str::random(8))) . '.xlsx';
+        $fileName = 'nms-report-' . date('Y-m-d', strtotime($this->from_date)) . '-to-' . date('Y-m-d', strtotime($this->to_date)) . '-' . Str::slug(Str::lower(Str::random(8))) . '.xlsx';
 
 
         // generate report and store
